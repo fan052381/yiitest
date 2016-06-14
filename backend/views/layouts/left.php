@@ -29,6 +29,7 @@
         <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu'],
+                /***********
                 'items' => [
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
@@ -60,7 +61,28 @@
                             ],
                         ],
                     ],
-                ],
+                ],************/
+                'items' => [
+                    ['label' => '管理后台', 'options' => ['class' => 'header']],
+                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    [
+                        'label' => '录入数据',
+                        'icon' => 'fa fa-edit',
+                        'url' => '#',
+                        'items' => [                            
+                              [
+                                'label' => '产品情况',
+                                'icon' => 'fa fa-rebel',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => '产品情况', 'icon' => 'fa fa-pie-chart', 'url' => ['/products'],],
+                                    ['label' => '产品布局', 'icon' => 'fa fa-puzzle-piece', 'url' => ['/products'],],
+                                    
+                                ],
+                            ],
+                        ],
+                    ],
+                ], 
             ]
         ) ?>
 
